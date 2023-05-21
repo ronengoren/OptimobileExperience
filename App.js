@@ -16,6 +16,8 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import ScrollHeader from './src/components/headers/ScrollHeader';
+import HomeScreen from './src/screens/HomeScreen';
 
 function Section(props) {
   const isDarkMode = useColorScheme() === 'dark';
@@ -59,11 +61,14 @@ function App() {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <Header />
+        <ScrollHeader title="Welcome to" subtitle="Optimobile Experience App" />
+
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
+          <HomeScreen />
+
           <Section title="Step One">
             Edit <Text style={styles.highlight}>App.js</Text> to change this
             screen and then come back to see your edits.
